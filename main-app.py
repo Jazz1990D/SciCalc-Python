@@ -10,19 +10,33 @@ def getTwoNumbers():
 def displayResult(x: float):
     print(x, "\n")
 
-
 def performCalcLoop(calc):
+    state = 0
     while True:
-        choice = input("Operation? ")
-        if choice == 'q':
-            break  # user types q to quit calulator.
-        elif choice == 'add':
-            a, b = getTwoNumbers()
-            displayResult(calc.add(a, b))
-        else:
-            print("That is not a valid input.")
+        print(state)
+        user=input()
+        user= user. split()
+        if user[0]=="+":
+            num = float(user[1])
+            state = calc.add(state,num)
+        elif user[0]== "/":
+            num = float(user[1])
+            state = calc.divide(state,num)
+        elif user[0]=="-":
+            num = float(user[1])  
+            state = calc.sub(state,num)
+        elif user[0]=="*":
+            num = float(user[1])
+            state = calc.multiply(state,num) 
+        elif user[0]=='quit':
+            break       
 
 
+
+            
+        
+
+           
 # main start
 def main():
     calc = Calculator()
@@ -32,3 +46,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+ 
