@@ -28,6 +28,13 @@ def performCalcLoop(calc):
         elif user[0]=="*":
             num = float(user[1])
             state = calc.multiply(state,num) 
+        elif user [0]=="sqr":
+              num = float(user[1])  
+              state = calc.square(state, num)
+        elif user [0]=="sqrt":
+              num = float(user[1])
+              state = calc.squareroot(state, num)      
+
         elif user[0]=='quit':
             break       
 
