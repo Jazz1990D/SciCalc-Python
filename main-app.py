@@ -1,21 +1,42 @@
 from calculator import Calculator
 
+def displayResult(state, mode):
+    if state == 'Err':
+        print(state)
+        return
+    match mode:
+        case "decimal":
+            print(float(state))
+        case "binary":
+            print(bin(state))
+        case "octal":
+            print(oct(state))
+        case "hexadecimal":
+            print(hex(state))
+    return
 
-def getTwoNumbers():
-    a = float(input("first number? "))
-    b = float(input("second number? "))
-    return a, b
-
-
-def displayResult(x: float):
-    print(x, "\n")
+def switchMode(mode):
+    match mode:
+        case "decimal":
+            print("Switching to hexadecimal")
+            return "hexadecimal"
+        case "hexadecimal":
+            print("Switching to binary")
+            return "binary"
+        case "binary":
+            print("Switching to octal")
+            return "Octal"
+        case "Octal":
+            print("switching to decimal")
+            return "decimal"
 
 def performCalcLoop(calc):
     state = 0
+    mode = "decimal"
     while True:
-        print(state)
+        displayResult(state, mode)
         user=input()
-        user= user. split()
+        user= user.split()
         if user[0]=="C":
             state=0
         elif user(0)=="Err":
