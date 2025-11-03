@@ -31,6 +31,15 @@ class Calculator:
 
     def invert(self, x):
         return x * -1
+
+    def sin(self, x):
+        return (math.sin(x))
+    
+    def cos(self, x):
+        return (math.cos(x))
+
+    def tan(self, x):
+        return (math.tan(x))
     
 
 
