@@ -59,6 +59,21 @@ def performCalcLoop(calc):
         elif user [0]=="sqrt":
               num = float(user[1])
               state = calc.squareroot(state, num)
+        elif user [0]=="exp":
+                num = float(user[1])
+                state = calc.exp(state, num)
+        elif user [0]=="inv":
+                state = calc.inverse(state)
+        elif user [0]=="sin":
+                state = calc.sin(state)
+        elif user [0]=="cos":
+                state = calc.cos(state)
+        elif user [0]=="tan":
+                state = calc.tan(state)
+        elif user[0]=="mode":
+            mode = switchMode(mode)
+        elif user[0]=="mode" and len(user)==2: and user[1] in ["decimal","hexadecimal","binary","octal"]:
+            mode = user[1]
         elif user[0]=='quit':
             break
         else:
