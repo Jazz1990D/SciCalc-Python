@@ -25,6 +25,9 @@ class Calculator:
 
     def exp(self, x, y):
         return x ** y
+
+    def inverse(self, x):
+        return 1 / x
     
 
 
