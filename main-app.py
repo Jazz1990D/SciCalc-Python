@@ -39,14 +39,17 @@ def performCalcLoop(calc):
         user= user.split()
         if user[0]=="C":
             state=0
-        elif user(0)=="Err":
+        elif user[0]=="Err":
             continue
         elif user[0]=="+":
             num = float(user[1])
             state = calc.add(state,num)
         elif user[0]== "/":
             num = float(user[1])
-            state = calc.divide(state,num)
+            if num == 0:
+                 state = "Err"
+            else:
+                state = calc.divide(state,num)
         elif user[0]=="-":
             num = float(user[1])  
             state = calc.sub(state,num)
@@ -57,8 +60,7 @@ def performCalcLoop(calc):
               num = float(user[1])  
               state = calc.square(state, num)
         elif user [0]=="sqrt":
-              num = float(user[1])
-              state = calc.squareroot(state, num)
+              state = calc.squareroot(state)
         elif user [0]=="exp":
                 num = float(user[1])
                 state = calc.exp(state, num)
@@ -72,7 +74,7 @@ def performCalcLoop(calc):
                 state = calc.tan(state)
         elif user[0]=="mode":
             mode = switchMode(mode)
-        elif user[0]=="mode" and len(user)==2: and user[1] in ["decimal","hexadecimal","binary","octal"]:
+        elif user[0]=="mode" and len(user)==2 and user[1] in ["decimal","hexadecimal","binary","octal"]:
             mode = user[1]
         elif user[0]=='quit':
             break
@@ -80,11 +82,6 @@ def performCalcLoop(calc):
             state = "Err"
 
 
-
-            
-        
-
-           
 # main start
 def main():
     calc = Calculator()

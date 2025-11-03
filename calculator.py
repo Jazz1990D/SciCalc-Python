@@ -11,7 +11,7 @@ class Calculator:
     def sub(self, x, y):
         return x - y
     
-    def mulitply(self, x, y):
+    def multiply(self, x, y):
         return x * y
     
     def divide(self, x, y):
@@ -21,7 +21,7 @@ class Calculator:
         return x ** 2  # or: return x * x
 
     def squareroot(self, x):
-        return math.sqaureroot(x)
+        return math.sqrt(x)
 
     def exp(self, x, y):
         return x ** y
