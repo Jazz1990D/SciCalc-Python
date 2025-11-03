@@ -28,6 +28,9 @@ class Calculator:
 
     def inverse(self, x):
         return 1 / x
+
+    def invert(self, x):
+        return x * -1
     
 
 
