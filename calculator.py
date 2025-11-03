@@ -22,6 +22,9 @@ class Calculator:
 
     def squareroot(self, x):
         return math.sqaureroot(x)
+
+    def exp(self, x, y):
+        return x ** y
     
 
 
