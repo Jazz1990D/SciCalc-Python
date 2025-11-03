@@ -16,7 +16,11 @@ def performCalcLoop(calc):
         print(state)
         user=input()
         user= user. split()
-        if user[0]=="+":
+        if user[0]=="C":
+            state=0
+        elif user(0)=="Err":
+            continue
+        elif user[0]=="+":
             num = float(user[1])
             state = calc.add(state,num)
         elif user[0]== "/":
@@ -33,10 +37,11 @@ def performCalcLoop(calc):
               state = calc.square(state, num)
         elif user [0]=="sqrt":
               num = float(user[1])
-              state = calc.squareroot(state, num)      
-
+              state = calc.squareroot(state, num)
         elif user[0]=='quit':
-            break       
+            break
+        else:
+            state = "Err"
 
 
 
